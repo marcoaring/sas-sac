@@ -1,0 +1,24 @@
+body{
+	background-color: rgba(3,169,244, 0.45);
+	color: #ffffff;
+}
+
+.container{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 320px;
+	
+	@media (min-width: 768px){
+		margin: 0 auto;
+		max-width: 646px;
+	}
+
+	@media (min-width: 1024px){
+		max-width: 846px;
+	}
+
+	@media (min-width: 1280px){
+		max-width: 1024px;
+	}
+}
