@@ -5,4 +5,36 @@
 	background-color: #ffffff;
 	color: #03a9f4;
 	border-radius: 7px;
+
+	.list{
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+		font-size: 16px;
+
+		.item{
+			display: flex;
+			justify-content: space-between;
+			border-top: 1px solid #03a9f4;
+
+			div{
+				width: 20%;
+				padding: 10px;
+				border-right: 1px solid #03a9f4;
+
+				&:first-child{ border-left: 1px solid #03a9f4; }
+			}
+			
+			&:first-child{
+				background-color: #03a9f4;
+				color: #ffffff;
+
+				div{ border-color: #ffffff; }
+			}
+
+			&:last-child{
+				border-bottom: 1px solid #03a9f4;
+			}
+		}
+	}
 }

@@ -10,10 +10,32 @@
 	<div class="app-vue">
 		<section class="container">
 			<div class="box">
-				<div v-for="(chamada, index) in chamadas">
-					{{chamada.estado}}
-				</div>
-				
+				<ul class="list">
+					<li class="item">
+						<div class="item__data">Data da Chamada</div>
+						<div class="item__estado">Estado</div>
+						<div class="item__tipo">Tipo de chamada</div>
+						<div class="item__motivo">Motivo da Chamada</div>
+						<div class="item__mensagem">Observação</div>
+					</li>
+					<li class="item" v-for="(chamada, index) in chamadas">
+						<div class="item__data">{{chamada.data}}</div>
+						<div class="item__estado">{{chamada.estado}}</div>
+
+						<div class="item__tipo" v-if="chamada.tipo == 1">Telefone</div>
+						<div class="item__tipo" v-else-if="chamada.tipo == 2">Chat</div>
+						<div class="item__tipo" v-else-if="chamada.tipo == 3">E-mail</div>
+						<div class="item__tipo" v-else>Não foi encontrado nenhum tipo nesse registro.</div>
+
+						<div class="item__motivo" v-if="chamada.motivo == 1">Dúvidas</div>
+						<div class="item__motivo" v-else-if="chamada.motivo == 2">Elogios</div>
+						<div class="item__motivo" v-else-if="chamada.motivo == 3">Sugestões</div>
+						<div class="item__motivo" v-else>Não foi encontrado nenhum motivo nesse registro.</div>
+
+						<div class="item__mensagem" v-if="chamada.mensagem">{{chamada.mensagem}}</div>
+						<div class="item__mensagem" v-else>Sem observação adicionada</div>
+					</li>
+				</ul>
 			</div>
 		</section>
 	</div>
