@@ -7,71 +7,77 @@
 </head>
 <body>
 	
-	<section class="container">
-		<div class="box">
-			<form class="form" action="">
-				<p class="form__input">
-					<select name="tipo" id="tio">
-						<option value="0">Selecione o tipo de chamada</option>
-						<option value="1">Telefone</option>
-						<option value="2">Chat</option>
-						<option value="3">E-mail</option>
-					</select>
-				</p>
+	<div class="app-vue">
+		<section class="container">
+			<div class="box">
+				<form class="form" action="" v-on:submit.prevent="submitForm">
+					<p class="form__input">
+						<select name="tipo" id="tipo" v-model="tipo">
+							<option value="0">Selecione o tipo de chamada</option>
+							<option value="1">Telefone</option>
+							<option value="2">Chat</option>
+							<option value="3">E-mail</option>
+						</select>
+					</p>
 
-				<p class="form__input">
-					<select name="estado" id="estado">
-						<option value="0">Selecione o estado</option>
-						<option value="AC">Acre</option>
-					    <option value="AL">Alagoas</option>
-					    <option value="AP">Amapá</option>
-					    <option value="AM">Amazonas</option>
-					    <option value="BA">Bahia</option>
-					    <option value="CE">Ceará</option>
-					    <option value="DF">Distrito Federal</option>
-					    <option value="ES">Espírito Santo</option>
-					    <option value="GO">Goiás</option>
-					    <option value="MA">Maranhão</option>
-					    <option value="MT">Mato Grosso</option>
-					    <option value="MS">Mato Grosso do Sul</option>
-					    <option value="MG">Minas Gerais</option>
-					    <option value="PA">Pará</option>
-					    <option value="PB">Paraíba</option>
-					    <option value="PR">Paraná</option>
-					    <option value="PE">Pernambuco</option>
-					    <option value="PI">Piauí</option>
-					    <option value="RJ">Rio de Janeiro</option>
-					    <option value="RN">Rio Grande do Norte</option>
-					    <option value="RS">Rio Grande do Sul</option>
-					    <option value="RO">Rondônia</option>
-					    <option value="RR">Roraima</option>
-					    <option value="SC">Santa Catarina</option>
-					    <option value="SP">São Paulo</option>
-					    <option value="SE">Sergipe</option>
-					    <option value="TO">Tocantins</option>
-					    <option value="ES">Estrangeiro</option>
-					</select>
-				</p>
+					<p class="form__input form__inputUnmargin">
+						<select name="estado" id="estado" v-model="estado">
+							<option value="0">Selecione o estado</option>
+							<option value="AC">Acre</option>
+						    <option value="AL">Alagoas</option>
+						    <option value="AP">Amapá</option>
+						    <option value="AM">Amazonas</option>
+						    <option value="BA">Bahia</option>
+						    <option value="CE">Ceará</option>
+						    <option value="DF">Distrito Federal</option>
+						    <option value="ES">Espírito Santo</option>
+						    <option value="GO">Goiás</option>
+						    <option value="MA">Maranhão</option>
+						    <option value="MT">Mato Grosso</option>
+						    <option value="MS">Mato Grosso do Sul</option>
+						    <option value="MG">Minas Gerais</option>
+						    <option value="PA">Pará</option>
+						    <option value="PB">Paraíba</option>
+						    <option value="PR">Paraná</option>
+						    <option value="PE">Pernambuco</option>
+						    <option value="PI">Piauí</option>
+						    <option value="RJ">Rio de Janeiro</option>
+						    <option value="RN">Rio Grande do Norte</option>
+						    <option value="RS">Rio Grande do Sul</option>
+						    <option value="RO">Rondônia</option>
+						    <option value="RR">Roraima</option>
+						    <option value="SC">Santa Catarina</option>
+						    <option value="SP">São Paulo</option>
+						    <option value="SE">Sergipe</option>
+						    <option value="TO">Tocantins</option>
+						    <option value="ES">Estrangeiro</option>
+						</select>
+					</p>
 
-				<p class="form__input">
-					<select name="motivo" id="motivo">
-						<option value="0">Selecione o motivo do chamado</option>
-						<option value="1">Dúvidas</option>
-						<option value="2">Elogios</option>
-						<option value="3">Sugestões</option>
-					</select>
-				</p>
+					<p class="form__input">
+						<select name="motivo" id="motivo" v-model="motivo">
+							<option value="0">Selecione o motivo do chamado</option>
+							<option value="1">Dúvidas</option>
+							<option value="2">Elogios</option>
+							<option value="3">Sugestões</option>
+						</select>
+					</p>
 
-				<p class="form__input">
-					<textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Descreva algum item importante da sua conversa."></textarea>
-				</p>
+					<p class="form__input form__inputFull">
+						<textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Descreva algum item importante da sua conversa." v-model="mensagem"></textarea>
+					</p>
 
-				<p class="form__input">
-					<button type="submit">Enviar!</button>
-				</p>
-			</form>
-		</div>
-	</section>
+					<p class="form__input form__send">
+						<button type="submit">Enviar!</button>
+					</p>
+
+					<div class="message message__sucess">Chamada registrada com sucesso.</div>
+					<div class="message message__error">Ocorreu algum erro ao registrar a sua chamada.</div>
+					<div class="message message__warning">Você deve preencher todos os campos obrigatórios.</div>
+				</form>
+			</div>
+		</section>
+	</div>
 
 	<script src="assets/js/vendor.min.js"></script>
 	<script src="assets/js/main.min.js"></script>

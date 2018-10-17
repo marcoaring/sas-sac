@@ -1,40 +1,69 @@
 let appVue = new Vue({
     el: ".app-vue",
     data: {
-        searchResults: []
-    },
-
-    created: function(){
-        //this.loadPosts();
+        searchResults: [],
+        tipo: 0,
+        estado: 0,
+        motivo: 0,
+        mensagem: ''
     },
 
     methods:{
-        /*loadPosts: function(){
+        checkField: function(){
+            return (this.tipo == 0 || this.estado == 0 || this.motivo == 0) ? false : true;
+        },
+
+        showMessage: function(type){
+            $('.message').hide();
+
+            if(type == 'sucess'){
+                $('.message__sucess').fadeIn();
+            } 
+
+            else if(type == 'warning'){
+                $('.message__warning').fadeIn();
+            } 
+
+            else{
+               $('.message__error').fadeIn(); 
+            }
+
+            setTimeout(function(){
+                $('.message').fadeOut();
+            }, 3000);
+        },
+
+        submitForm: function(){
             let self = this;
-            let type = this.getUrlParameter('type');
-            let filter = (type) ? '&filter[meta_key]=categoria_imdb&filter[meta_value]=' + type : '';
+            let validation = this.checkField();
 
-            console.log(type);
+            if(validation){
+                $.ajax({
+                    url: 'php/inserir.php',
+                    type: 'POST',
+                    data:{
+                        'tipo': self.tipo,
+                        'estado': self.estado,
+                        'motivo': self.motivo,
+                        'mensagem': self.mensagem
+                    },
 
-            $.ajax({
-                url: self.wpApi + "entretenimento?author=" + self.user + filter,
-                success: function(result){
-                    let id = '';
+                    success: function(data){
+                        self.tipo = 0;
+                        self.estado = 0;
+                        self.motivo = 0;
+                        self.mensagem = '';   
+                        
+                        self.showMessage('sucess');
+                    },
 
-                    $.each(result, function(index, card){
-                        id = card.acf.id_imdb;
-                        $.ajax({
-                            url: self.imdbApi + "i=" + id,
-                            success: function(cardItem){
-                                self.posts.push(cardItem);
-                            }
-                        });
-                    });
-                }
-            });
-        }*/
-    },
-
-    watch: {
+                    error: function(data){
+                        self.showMessage('error');
+                    }
+                });
+            } else{
+                self.showMessage('warning');
+            }
+        }
     }
 });
