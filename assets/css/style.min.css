@@ -21,6 +21,13 @@ body{background-color:rgba(3,169,244,0.45);color:#fff}
 .form .message__error{border-color:#af4c4c;color:#af4c4c}
 .form .message__warning{border-color:#ffc107;color:#ffc107}
 .box{width:100%;margin-top:40px;padding:40px;background-color:#fff;color:#03a9f4;border-radius:7px}
+.box .list{list-style:none;padding:0;margin:0;font-size:16px}
+.box .list .item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;border-top:1px solid #03a9f4}
+.box .list .item div{width:20%;padding:10px;border-right:1px solid #03a9f4}
+.box .list .item div:first-child{border-left:1px solid #03a9f4}
+.box .list .item:first-child{background-color:#03a9f4;color:#fff}
+.box .list .item:first-child div{border-color:#fff}
+.box .list .item:last-child{border-bottom:1px solid #03a9f4}
 @media(min-width:768px){.container{margin:0 auto;max-width:646px}
 }@media(min-width:1024px){.container{max-width:846px}
 }@media(min-width:1280px){.container{max-width:1024px}

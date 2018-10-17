@@ -1,11 +1,16 @@
 let appVue = new Vue({
     el: ".app-vue",
     data: {
-        searchResults: [],
+        chamadas: [],
         tipo: 0,
         estado: 0,
         motivo: 0,
-        mensagem: ''
+        mensagem: '',
+        api: 'php/mostra.php'
+    },
+
+    created: function(){
+        this.loadChamadas();
     },
 
     methods:{
@@ -64,6 +69,18 @@ let appVue = new Vue({
             } else{
                 self.showMessage('warning');
             }
-        }
+        },
+
+        loadChamadas: function(){
+            let self = this;
+
+            $.ajax({
+                dataType: 'json',
+                url: self.api,
+                success: function(result){
+                    self.chamadas = result;
+                }
+            });
+        },
     }
 });
