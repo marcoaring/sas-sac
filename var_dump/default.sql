@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 17-Out-2018 às 02:04
+-- Generation Time: 18-Out-2018 às 01:36
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `sas_chamadas` (
   `id` int(11) NOT NULL,
   `tipo` int(1) NOT NULL,
-  `estado` int(1) NOT NULL,
+  `estado` varchar(2) NOT NULL,
   `motivo` int(1) NOT NULL,
   `mensagem` text NOT NULL,
   `data` varchar(10) NOT NULL
@@ -55,7 +55,7 @@ ALTER TABLE `sas_chamadas`
 -- AUTO_INCREMENT for table `sas_chamadas`
 --
 ALTER TABLE `sas_chamadas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

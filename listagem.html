@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<title>Teste SAC</title>
 	<link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -10,7 +13,10 @@
 	<div class="app-vue">
 		<section class="container">
 			<div class="box">
-				<ul class="list">
+				<div class="links">
+					<a href="index.html" class="links__item links__left">< Acessar Formulário de Chamados</a>
+				</div>
+				<ul class="list" v-if="chamadas">
 					<li class="item">
 						<div class="item__data">Data da Chamada</div>
 						<div class="item__estado">Estado</div>
@@ -19,23 +25,25 @@
 						<div class="item__mensagem">Observação</div>
 					</li>
 					<li class="item" v-for="(chamada, index) in chamadas">
-						<div class="item__data">{{chamada.data}}</div>
-						<div class="item__estado">{{chamada.estado}}</div>
+						<div class="item__data"><span>Data da Chamada: </span>{{chamada.data}}</div>
+						<div class="item__estado"><span>Estado: </span>{{chamada.estado}}</div>
 
-						<div class="item__tipo" v-if="chamada.tipo == 1">Telefone</div>
-						<div class="item__tipo" v-else-if="chamada.tipo == 2">Chat</div>
-						<div class="item__tipo" v-else-if="chamada.tipo == 3">E-mail</div>
-						<div class="item__tipo" v-else>Não foi encontrado nenhum tipo nesse registro.</div>
+						<div class="item__tipo" v-if="chamada.tipo == 1"><span>Tipo: </span>Telefone</div>
+						<div class="item__tipo" v-else-if="chamada.tipo == 2"><span>Tipo: </span>Chat</div>
+						<div class="item__tipo" v-else-if="chamada.tipo == 3"><span>Tipo: </span>E-mail</div>
+						<div class="item__tipo" v-else><span>Tipo: </span>Não foi encontrado nenhum tipo nesse registro.</div>
 
-						<div class="item__motivo" v-if="chamada.motivo == 1">Dúvidas</div>
-						<div class="item__motivo" v-else-if="chamada.motivo == 2">Elogios</div>
-						<div class="item__motivo" v-else-if="chamada.motivo == 3">Sugestões</div>
-						<div class="item__motivo" v-else>Não foi encontrado nenhum motivo nesse registro.</div>
+						<div class="item__motivo" v-if="chamada.motivo == 1"><span>Motivo: </span>Dúvidas</div>
+						<div class="item__motivo" v-else-if="chamada.motivo == 2"><span>Motivo: </span>Elogios</div>
+						<div class="item__motivo" v-else-if="chamada.motivo == 3"><span>Motivo: </span>Sugestões</div>
+						<div class="item__motivo" v-else><span>Motivo: </span>Não foi encontrado nenhum motivo nesse registro.</div>
 
-						<div class="item__mensagem" v-if="chamada.mensagem">{{chamada.mensagem}}</div>
-						<div class="item__mensagem" v-else>Sem observação adicionada</div>
+						<div class="item__mensagem" v-if="chamada.mensagem"><span>Observação: </span>{{chamada.mensagem}}</div>
+						<div class="item__mensagem" v-else><span>Observação: </span>Sem observação adicionada</div>
 					</li>
 				</ul>
+
+				<p v-if="!chamadas">Nenhum registro cadastrado ainda.</p>
 			</div>
 		</section>
 	</div>

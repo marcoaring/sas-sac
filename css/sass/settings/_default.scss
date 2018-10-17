@@ -9,16 +9,16 @@ body{
 	align-items: center;
 	min-width: 320px;
 	
-	@media (min-width: 768px){
+	@media only screen and (min-width: 601px){
 		margin: 0 auto;
 		max-width: 646px;
 	}
 
-	@media (min-width: 1024px){
+	@media only screen and (min-width: 1024px){
 		max-width: 846px;
 	}
 
-	@media (min-width: 1280px){
+	@media only screen and (min-width: 1280px){
 		max-width: 1024px;
 	}
 }
