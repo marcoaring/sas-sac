@@ -78,6 +78,7 @@ let appVue = new Vue({
                 dataType: 'json',
                 url: self.api,
                 success: function(result){
+                    console.log(result);
                     self.chamadas = result;
                 }
             });

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18-Out-2018 às 01:36
+-- Generation Time: 18-Out-2018 às 02:01
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -38,6 +38,15 @@ CREATE TABLE `sas_chamadas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `sas_chamadas`
+--
+
+INSERT INTO `sas_chamadas` (`id`, `tipo`, `estado`, `motivo`, `mensagem`, `data`) VALUES
+(3, 1, 'RJ', 1, 'Cliente queria saber qual a data do pagamento da sua fatura.', '18/09/2018'),
+(4, 2, 'AL', 3, 'Cliente queria sugerir a inserção do método de pagamento por boleto no site.', '15/05/2018'),
+(5, 3, 'BA', 2, 'Cliente queria elogiar a atendente e propor um atendimento mais rápido pelo chat.', '18/10/2018');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +64,7 @@ ALTER TABLE `sas_chamadas`
 -- AUTO_INCREMENT for table `sas_chamadas`
 --
 ALTER TABLE `sas_chamadas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

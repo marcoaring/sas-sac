@@ -1,10 +1,31 @@
 .box{
-	width: 100%;
+	width: 70%;
 	margin-top: 40px;
 	padding: 40px;
 	background-color: #ffffff;
 	color: #03a9f4;
 	border-radius: 7px;
+	
+	.links{
+		margin-bottom: 30px;
+
+		&__item{
+			display: block;
+			font-size: 13px;
+			color: #03a9f4;
+			text-decoration: none;
+			text-transform: uppercase;
+			transition: all 0.3s linear;
+
+			&:hover{
+				color: #086994;
+			}
+		}
+		
+		&__right{ text-align: right; }
+
+		&__left{ text-align: left; }
+	}
 
 	.list{
 		list-style: none;
@@ -13,28 +34,64 @@
 		font-size: 16px;
 
 		.item{
-			display: flex;
-			justify-content: space-between;
-			border-top: 1px solid #03a9f4;
+			padding: 15px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			color: #ffffff;
 
 			div{
-				width: 20%;
-				padding: 10px;
-				border-right: 1px solid #03a9f4;
+				margin-bottom: 5px;
+				line-height: 25px;
 
-				&:first-child{ border-left: 1px solid #03a9f4; }
+				span{
+					font-weight: bold;
+				}
 			}
+			&:first-child{ display: none; }
 			
-			&:first-child{
-				background-color: #03a9f4;
-				color: #ffffff;
+			&:nth-child(even){ background-color: #8dd8fa; }
 
-				div{ border-color: #ffffff; }
-			}
+			&:nth-child(odd){ background-color: #529dbf; }
+		}
 
-			&:last-child{
-				border-bottom: 1px solid #03a9f4;
+		@media only screen and (min-width: 767px){
+			.item{
+				display: flex;
+				justify-content: space-between;
+				padding: 0px;
+				margin: 0px;
+				color: #03a9f4;
+				border-radius: 0px;
+				background-color: transparent !important;
+				border-top: 1px solid #03a9f4;
+
+				div{
+					width: 20%;
+					padding: 10px;
+					margin: 0px;
+					border-right: 1px solid #03a9f4;
+					
+					span{ display: none; }
+
+					&:first-child{ border-left: 1px solid #03a9f4; }
+				}
+				
+				&:first-child{
+					display: flex;
+					background-color: #03a9f4 !important;
+					color: #ffffff;
+
+					div{ border-color: #ffffff; }
+				}
+
+				&:last-child{
+					border-bottom: 1px solid #03a9f4;
+				}
 			}
 		}
+	}
+
+	@media only screen and (min-width: 601px){
+		width: 100%;
 	}
 }

@@ -1,7 +1,6 @@
 .form{
 	&__input{
-		width: 47%;
-		margin-right: 3%;
+		width: 100%;
 		display: inline-block;
 
 		input, select, textarea{
@@ -13,7 +12,7 @@
 		}
 
 		textarea{
-			width: 92%;
+			width: 94%;
 			margin-bottom: 3%;
 		}
 	}
@@ -67,5 +66,21 @@
 			border-color: #ffc107;
 			color: #ffc107;
 		}
+	}
+
+	@media only screen and (min-width: 601px){
+		&__input{
+			width: 46%;
+			margin-right: 3%;
+
+			textarea{
+				width: 89%;
+				margin-bottom: 3%;
+			}
+		}
+
+		&__inputUnmargin{ margin-right: 0; }
+
+		&__inputFull, &__send{ width: 100%; }
 	}
 }

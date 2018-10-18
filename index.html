@@ -2,6 +2,9 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<title>Teste SAC</title>
 	<link rel="stylesheet" href="assets/css/style.min.css">
 </head>
@@ -10,6 +13,9 @@
 	<div class="app-vue">
 		<section class="container">
 			<div class="box">
+				<div class="links">
+					<a href="listagem.html" class="links__item links__right">Acessar Listagem de Chamados ></a>
+				</div>
 				<form class="form" action="" v-on:submit.prevent="submitForm">
 					<p class="form__input">
 						<select name="tipo" id="tipo" v-model="tipo">
