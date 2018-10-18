@@ -11,7 +11,7 @@ Após instalar o seu servidor basta entrar por linha de comando ou pelo seu gere
 
 Uma observação interessante é que o arquivo default é apenas um arquivo estrutural, não possui nenhum conteúdo. Se você desejar algum conteúdo já cadastrado basta subir o arquivo **content.sql** no lugar do arquivo **default.sql**.
 
-## O SEU BANCO DE DADOS OBRIGATORIAMENTE DEVE ESTAR COM USUÁRIO ROOT E SENHA VAZIA ##
+### O SEU BANCO DE DADOS OBRIGATORIAMENTE DEVE ESTAR COM USUÁRIO ROOT E SENHA VAZIA ###
 
 Após a configuração do seu banco de dados basta acessar a sua pasta de arquivos *www* (para wamp) *htdocs* (para xampp) e fazer o clone desse repositório através do comando:
 
